@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Shimmer from "./shimmer";
+import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 //import { Menu_URL , M_API} from "../utils/constants";
 import useRestaurantMenu,{categories} from "../utils/useRestaurantMenu";

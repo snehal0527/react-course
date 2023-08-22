@@ -5,7 +5,7 @@ import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
 // Below Used named Import for named Export;
 
 //import restList from "../utils/mockData";
-import Shimmer from "./shimmer";
+import Shimmer from "./Shimmer";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
