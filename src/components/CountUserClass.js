@@ -1,40 +1,11 @@
-# react-course
 
-Food ordering App
 
 /**
- * header
- * -Logo
- * -Menu Bar or navigation 
- * Body
- * -Search
- * -RestaurantContainer
- *  -RestaurantCard
- *     -Image
- *     -Name of res,star rating,cuisine,delivery time
- * Footer
- * -Copyright
- * -Links
- * -Address
- * -Contact
- */
-
-Two types of export:
-1.named export
-2.default export
- we can use both named and default export at the same time for same component.
-
- 
- #React Hooks:
-
- normal JS utility functions.
- written inside React.
-
-Two most important hooks :-
-
- -useState()
- -useEffect()
-
+ * IMPORTANT NOTE:::::
+ This is only for my knowledge this is not used anywhere in project.
+this whole code is copied from UserClass.js
+Need to change UserClass.js code so I have copied it 
+**/
 
 
 import React from "react";
@@ -53,10 +24,10 @@ class UserClass extends React.Component{
  * as given below.
  * this state is big Object which contains all the state variable we contains.
  */
-       /**  this.state={
+        this.state={
             count:0,
             count2:2,
-        };**/
+        };
 
         console.log("Child Constructor")
 
