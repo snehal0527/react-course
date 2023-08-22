@@ -279,6 +279,10 @@ img, video {
   width: 14rem;
 }
 
+.w-6\/12 {
+  width: 50%;
+}
+
 .w-8\/12 {
   width: 66.6667%;
 }
@@ -293,14 +297,6 @@ img, video {
 
 .w-full {
   width: 100%;
-}
-
-.w-10 {
-  width: 2.5rem;
-}
-
-.w-6\/12 {
-  width: 50%;
 }
 
 .cursor-pointer {
