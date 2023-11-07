@@ -4,8 +4,7 @@ import { Menu_URL,M_API } from "./constants";
 const useRestaurantMenu=(resId)=>{
 
     const [resInfo, setResInfo] = useState([]);
-    // const [restdata, setRestData] = useState({});
-
+    
     useEffect(()=>{
         fetchData();
      },[]);
@@ -15,9 +14,7 @@ const useRestaurantMenu=(resId)=>{
         const json=await data.json();
         setResInfo(json.data);
         setResInfo(json.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card);
-       // setRestData(json.data?.cards[0]?.card?.card);
-        //console.log(json.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
-
+       
     };
 
     return resInfo;

@@ -25,6 +25,7 @@ class UserClass extends React.Component{
         //console.log("child component Did Mount");
 
         const data = await fetch("https://api.github.com/users/snehal0527");
+        
       const json = await data.json();
 
       console.log(json);
@@ -56,6 +57,9 @@ componentWillUnmount(){
         * we can use any of them
         * here "avatar_url" is taken from the api that we have called.
         */
+
+       //Destructuring 
+
         const {location, avatar_url} = this.state.UserInfo;
 
        return (

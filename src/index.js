@@ -36,10 +36,10 @@ const AppLayout=()=>{
 
         //make an API call and send username and password.
 
-        const data={
-            name:"Snehal Birajdar",
-        };
-        setUserName(data.name);
+        // const data={
+        //     name:"Snehal Birajdar",
+        // };
+        setUserName("Snehal Birajdar");
     },[]);
    return(
 
@@ -70,7 +70,9 @@ const AppLayout=()=>{
             <Outlet />
          </div>
     </UserContext.Provider>
+    
     </Provider>
+    
       
    );
 };

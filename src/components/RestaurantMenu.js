@@ -9,25 +9,12 @@ import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
 
-  // const Categories1=categories;
-  //const [resInfo, setResInfo] = useState([]);
-
-  //const [resMenu, setResMenu] = useState({});
  
-  //const [restdata, setRestData] = useState({});
-
-  /** const params = useParams(); below instead of params I used resId. 
-   * useParam() is a hook comes from react-router-dom
-   * here we used resId in URL so resId is given even if params is given 
-   * as shown above it will give us Id
-   * here we need dynamic Id's so resId is used to take
-   **/
-
 
   const {resId} = useParams();
   //console.log(resId);
 
-  //below custom hook is used. custom hooks are created by us.
+  //below custome hooks are used.
 
   const resMenu = useRestaurantMenu(resId);
 
@@ -35,30 +22,8 @@ const RestaurantMenu = () => {
 
   const resCat = useCategories(resId);
 
-  const [count, setCount]=useState(0);
-
   const[showIndex, setShowIndex]=useState(null);
-  /**useEffect(() => {
-    fetchMenu();
-  }, []);
-
-  const fetchMenu = async () => {
-    try {
-      const data = await fetch(Menu_URL + resId + M_API);
-      const json = await data.json();
-      setResMenu(json.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card);
-      setRestData(json.data?.cards[0]?.card?.card);
-      console.log(json);
-
-    } catch (error) {
-      console.error("Error fetching data:", error);
-      // Handle error or set a default value for resInfo in case of an error
-      //setResInfo([]);
-      setResMenu([]);
-    }
-
-  };
-  **/
+  
 
   if(Object.keys(resMenu).length === 0) return <Shimmer />;
 
@@ -92,10 +57,7 @@ const RestaurantMenu = () => {
       
       {/*accordion category*/}
       {resCat.map((category,index)=>(
-
-
         //controlled Component
-
         <RestaurantCategory 
         key={category.card.card.title}
         data={category.card.card}
@@ -110,6 +72,12 @@ const RestaurantMenu = () => {
 };
 
 export default RestaurantMenu;
+
+
+
+
+
+
 
 
 
@@ -132,3 +100,41 @@ export default RestaurantMenu;
         ))}
        </ul>
        */
+
+
+        // const Categories1=categories;
+  //const [resInfo, setResInfo] = useState([]);
+
+  //const [resMenu, setResMenu] = useState({});
+ 
+  //const [restdata, setRestData] = useState({});
+
+  /** const params = useParams(); below instead of params I used resId. 
+   * useParam() is a hook comes from react-router-dom
+   * here we used resId in URL so resId is given even if params is given 
+   * as shown above it will give us Id
+   * here we need dynamic Id's so resId is used to take
+   **/
+
+
+  /**useEffect(() => {
+    fetchMenu();
+  }, []);
+
+  const fetchMenu = async () => {
+    try {
+      const data = await fetch(Menu_URL + resId + M_API);
+      const json = await data.json();
+      setResMenu(json.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card);
+      setRestData(json.data?.cards[0]?.card?.card);
+      console.log(json);
+
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      // Handle error or set a default value for resInfo in case of an error
+      //setResInfo([]);
+      setResMenu([]);
+    }
+
+  };
+  **/

@@ -1298,7 +1298,7 @@ const Body=()=>{
           <button className="filter-btn" 
           onClick={() => {
             const newRestList = restList.filter(rest =>
-                rest.data.avgRating > 4);
+                rest.data.avgRating > 4.5);
                 console.log(restList);
                 setFilteredRestList(newRestList); 
                 

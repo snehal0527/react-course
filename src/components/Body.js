@@ -1,6 +1,6 @@
 //  Below Used Default Import for default Export;
 
-import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
+import RestaurantCard from "./RestaurantCard";
 
 // Below Used named Import for named Export;
 
@@ -42,18 +42,7 @@ const Body=()=>{
     const onlineStatus= useOnlineStatus();
 
     if(onlineStatus===false) return <h1>Looks like you are offline!!! Please check your Internet Connection.</h1>
-    //Most IMPORTANT QUESTION ASKED IN INTERVIEW "What is conditional rendering?? "
-    //Below this is called conditional rendering.
-    //rendering on the basis of condition is know as conditional rendering.
-
-   /**  if(!listOfRestaurants.length)
-    {
-        return <Shimmer/>;
-    }**/
     
-
-    //Here below we have used turnery operator instead of "If statement"
-
  return !listOfRestaurants.length?(<Shimmer/>):(
        <div className="body">
            <div className="filter flex">
@@ -66,30 +55,33 @@ const Body=()=>{
                 }/>
 
                 <button className="px-4 py-2 bg-green-100 m-4 rounded-lg"
-                onClick={()=>{
-                    //filter the restaurant card and update the UI.
-                    //Search text needed
-                    console.log(searchText)
-                    const filteredRestaurant = listOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
+                    onClick={()=>{
+                        //filter the restaurant card and update the UI.
+                        //Search text needed
+                        console.log(searchText)
+                        const filteredRestaurant = listOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
 
-                    console.log(filteredRestaurant);
-                    setFilteredRestaurant(filteredRestaurant);
-                }}>
+                        console.log(filteredRestaurant);
+                        setFilteredRestaurant(filteredRestaurant);
+                    }}>
                     Search
                 </button>
             </div>
             <div className="search m-4 p-4 flex items-center">
-                <button className="px-4 py-2 bg-gray-100 m-4 rounded-lg" onClick={() => {
-               const FilteredList = listOfRestaurants.filter((rest) =>
-                rest.info.avgRating > 4.2);
-                setListOfRestaurants(FilteredList); 
-
+                <button className="px-4 py-2 bg-gray-100 m-4 rounded-lg"
+                    onClick={() => {
+                        const FilteredList = listOfRestaurants.filter((rest) => rest.info.avgRating > 4.5 );
+                        console.log(FilteredList)
+                        setFilteredRestaurant(FilteredList); 
+                        
             }}
             >
             Top Rated Restaurants
          </button>
          </div>
+
       </div>
+      
       <div className="flex flex-wrap">
              {
                 filteredRestaurant.map((restaurant) => (
@@ -101,10 +93,39 @@ const Body=()=>{
               </Link>
             )) }
           </div>
- 
+                    
        </div>
     ) }
 
  // Below used default export;
 
  export default Body;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ //Most IMPORTANT QUESTION ASKED IN INTERVIEW "What is conditional rendering?? "
+    //Below this is called conditional rendering.
+    //rendering on the basis of condition is know as conditional rendering.
+
+   /**  if(!listOfRestaurants.length)
+    {
+        return <Shimmer/>;
+    }**/
+    
+
+    //Here below we have used turnery operator instead of "If statement"

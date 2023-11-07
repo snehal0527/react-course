@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+//Redux
+
 const cartSlice=createSlice({
     name: 'cart',
 
@@ -12,9 +14,7 @@ const cartSlice=createSlice({
     //reducers modifies the state
     reducers: {
         addItems: (state,action)=>{
-            //mutating the state here i.e we are modifying state here
-            //we have to mutate the state in redux toolkit
-            //redux toolkit uses Immer behind the scenes
+            //mutating the state here i.e  modifying state here
             state.items.push(action.payload);
         },
         removeItem: (state)=>{
@@ -25,6 +25,7 @@ const cartSlice=createSlice({
     },
 },
 });
+
 
 export const {addItems,removeItem,clearCart} = cartSlice.actions;
 

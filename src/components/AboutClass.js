@@ -15,7 +15,23 @@ class AboutClass extends React.Component {
     componentDidMount() {
         //console.log("Parent component class Did Mount");
         //API call
+        
+        //     this.timer=setInterval(()=>{
+        //         console.log("Hello");
+        //     },1000);
+    
+         }
 
+     componentDidUpdate() {
+    //     this.timer=setInterval(()=>{
+    //         console.log("Hello");
+    //     },1000);
+
+     }
+
+     componentWillUnmount()
+    {
+    //     clearInterval(this.timer);
     }
 
     render(){
@@ -24,7 +40,7 @@ class AboutClass extends React.Component {
 
         return(
             <div>
-                <h1>About Class</h1>
+                {/* <h1>About Class</h1> */}
                 <div>
                     LoggedIn User
                     {/* {<UserContext.Consumer> is a Component not a hook} */}
@@ -34,9 +50,9 @@ class AboutClass extends React.Component {
                         )}
                     </UserContext.Consumer>
                 </div>
-                <h2>This is React web series</h2>
+                {/* <h2>This is React web series</h2> */}
                 
-                <UserClass Name={"Snehal Birajdar"} Location={"Pune"}/>
+                <UserClass />
             </div>
         );
     
